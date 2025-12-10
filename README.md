@@ -106,6 +106,8 @@ prediction = model.predict(image, question)
 print(prediction)
 ```
 
+Reference files: [Final]_final_project_demo.ipynb
+
 ---
 
 # 🎯 Expected Output
