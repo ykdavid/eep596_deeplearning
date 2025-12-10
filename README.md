@@ -95,15 +95,20 @@ demo/[Final]_final_project_demo_result.ipynb
 ### Example Usage
 
 ```python
-from model import VQAModelResnetBert
-from utils import load_image, load_question
+df_results = pd.DataFrame({
+    "gt_answer": ground_truths,
+    "pred_answer": predictions,
+    "is_correct": [1 if p.lower().strip() == g.lower().strip() else 0 for p, g in zip(predictions, ground_truths)],
+    "similarity": similarities
+})
+# [NEW] Calculate and Print Final Metrics
+final_acc = df_results["is_correct"].mean()
+avg_sim = df_results["similarity"].mean()
 
-model = load_pretrained("checkpoints/resnet50_bert_best.pth")
-image = load_image("demo/sample_ct.png")
-question = "What abnormality is visible?"
-
-prediction = model.predict(image, question)
-print(prediction)
+print("="*30)
+print(f"Final Test Accuracy: {final_acc:.4f}")
+print(f"Final SBERT Similarity: {avg_sim:.4f}")
+print("="*30)
 ```
 
 ---
@@ -113,11 +118,10 @@ print(prediction)
 Example output from the demo:
 
 ```
-Image: sample_ct.png
-Question: What abnormality is visible?
-Predicted Answer: cortical enhancement
-Ground Truth: mucosal hyperemia
-SBERT similarity: 0.727
+==============================
+Final Test Accuracy: 0.6089
+Final SBERT Similarity: 0.7222
+==============================
 ```
 
 Plots generated in the results folder include:
