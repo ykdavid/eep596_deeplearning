@@ -89,7 +89,7 @@ pip install -r requirements.txt
 A minimal demo notebook is provided:
 
 ```
-demo/[Final] project_demo.ipynb
+demo/[Final]_final_project_demo_result.ipynb
 ```
 
 ### Example Usage
@@ -105,8 +105,6 @@ question = "What abnormality is visible?"
 prediction = model.predict(image, question)
 print(prediction)
 ```
-
-Reference files: [Final]_final_project_demo.ipynb
 
 ---
 
