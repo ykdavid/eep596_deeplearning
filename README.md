@@ -47,16 +47,6 @@ The assignment template requires these three files.
 * Training loops
 * Evaluation logic
 
-To comply with the project structure requirement, **placeholder files** exist in `src/`, each containing a short explanation:
-
-```
-# main.py
-# This project is implemented in Jupyter notebooks for clarity and visualization.
-# Training and evaluation pipelines can be found in the `demo/` directory.
-```
-
-This satisfies the directory requirement **without breaking the notebook-based workflow**, which is better suited for iterative experimentation.
-
 ---
 
 # 🛠️ Setup Instructions
